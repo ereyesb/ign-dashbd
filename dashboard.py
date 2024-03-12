@@ -17,7 +17,23 @@ import plotly.express as px
 
 # load data
 
-data = pd.read_csv('https://github.com/ereyesb/ign-dashbd/blob/main/IGN_games_from_best_to_worst.csv')
+url = 'https://raw.githubusercontent.com/ereyesb/ign-dashbd/main/IGN_games_from_best_to_worst.csv'
+
+response = requests.get(url)
+
+# Verificar si la descarga fue exitosa
+if response.status_code == 200:
+    # Leer el contenido del archivo CSV
+    csv_data = response.content.decode('utf-8')
+    
+    # Convertir el contenido a un DataFrame de Pandas
+    data = pd.read_csv(StringIO(csv_data))
+    
+    # Ahora puedes usar el DataFrame `df` como lo harías normalmente
+    print(data.head())
+else:
+    print("No se pudo descargar el archivo CSV")
+  
 data_original = data
 
 # Paleta de colores

@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from io import StringIO
 import plotly.express as px
+import requests
 
 
 

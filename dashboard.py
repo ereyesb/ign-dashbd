@@ -15,8 +15,9 @@ import plotly.express as px
 ## data_exclusive para analsis de exclusivas
 
 
-# Supongamos que 'data.csv' contiene tus datos
-data = pd.read_csv('IGN games from best to worst/IGN_games_from_best_to_worst.csv')
+# load data
+
+data = pd.read_csv('https://github.com/ereyesb/ign-dashbd/blob/main/IGN_games_from_best_to_worst.csv')
 data_original = data
 
 # Paleta de colores
@@ -173,7 +174,7 @@ def show_data():
 
         st.title("Resume")
         
-        st.write("Poner mejor y peores juegos y un buscador")
+        ## st.write("Poner mejor y peores juegos y un buscador")
         st.write("This dashboard application entails the analysis of ratings assigned by the renowned media IGN to all games released up to 2016. You can explore detailed information in the tabs provided on this page.")
         st.write("The analysis has two focuses: firstly, the analysis of titles, genres, and platforms; and secondly, the analysis of exclusive titles and the performance of the Sony, Nintendo, and Xbox brands.")
         st.write("If you want to find the score of a specific title, you can search for it below.")

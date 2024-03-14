@@ -97,7 +97,7 @@ df_system = pd.DataFrame({'platform': lista_platform, 'system': lista_system})
 
 data =  pd.merge(data, df_system, on='platform', how='left').fillna('Other')
 
-data_platform = data
+data_platform = data.copy()
 
 # Realizar la agrupación por la columna 'Grupo' y aplicar la función de agregación personalizada
 resultado = pd.crosstab(index=data['title'], columns=data['system'])
